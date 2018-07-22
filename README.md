@@ -1,5 +1,5 @@
-# VSM Codeigniter (Cosine Measurement)
-Module VSM untuk membantu pencarian pada codeigniter menggunakan Information retrieval berbahasa indonesia.
+# VSM PHP Native (Cosine Measurement)
+Module VSM untuk membantu pencarian pada PHP menggunakan Information retrieval berbahasa indonesia.
 
 ## Setting Up
 Untuk menggunakan model ini anda harus melakukan beberapa langkah setup berikut.
