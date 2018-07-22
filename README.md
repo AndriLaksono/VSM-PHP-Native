@@ -33,11 +33,11 @@ function pencarian()
     $query = $preprocess::preprocess($_POST['cari']);
 
     // == STEP 3 medapatkan dokumen ke array
-    $connect = mysqli_query(mysqli_connect('localhost', 'root', '', 'tbi_kriminalitas'), "SELECT * FROM kriminal");
+    $connect = mysqli_query(mysqli_connect('localhost', 'root', '', 'db_blog'), "SELECT * FROM artikel");
     $arrayDokumen = [];
     while ($row = mysqli_fetch_assoc($connect)) {
         $arrayDoc = [
-            'id_doc' => $row['id_kriminal'],
+            'id_doc' => $row['id_artikel'],
             'dokumen' => implode(" ", $preprocess::preprocess($row['deskripsi']))
         ];
         array_push($arrayDokumen, $arrayDoc);
@@ -52,31 +52,6 @@ function pencarian()
 
 // jalankan fungsi
 pencarian();
-```
-
-Contoh Model CI kami
-```
-<?php
-
-
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class BlogModel extends CI_Model {
-
-    
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    public function get_data()
-    {
-        $data = $this->db->get('blog')->result();
-        return $data;
-    }
-    
-
-}
 ```
 
 ## Authors
